@@ -1,0 +1,50 @@
+{
+  "name": "Nominal regulation and protection boundaries",
+  "scenarios": [
+    {
+      "name": "idle",
+      "load_a": 0.1,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false
+    },
+    {
+      "name": "moderate_load",
+      "load_a": 1,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false
+    },
+    {
+      "name": "below_thermal",
+      "load_a": 1.2,
+      "initial_temperature_c": 79.99,
+      "expect_shutdown": false,
+      "samples": 1
+    },
+    {
+      "name": "thermal_at",
+      "load_a": 0.5,
+      "initial_temperature_c": 80,
+      "expect_shutdown": true
+    },
+    {
+      "name": "below_current",
+      "load_a": 1.999,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false,
+      "samples": 1
+    },
+    {
+      "name": "current_at",
+      "load_a": 2,
+      "initial_temperature_c": 25,
+      "expect_shutdown": true
+    },
+    {
+      "name": "combined_trip",
+      "load_a": 2.4,
+      "initial_temperature_c": 100,
+      "expect_shutdown": true
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Deliberate defect detection",
+  "scenarios": [
+    {
+      "name": "baseline",
+      "load_a": 0.5,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false
+    },
+    {
+      "name": "voltage_bias",
+      "load_a": 0.5,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false,
+      "fault": "voltage_bias"
+    },
+    {
+      "name": "current_bias",
+      "load_a": 0.5,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false,
+      "fault": "current_bias"
+    },
+    {
+      "name": "protection_bypass",
+      "load_a": 0.3,
+      "initial_temperature_c": 95,
+      "expect_shutdown": true,
+      "fault": "protection_bypass"
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,7 @@
+INFO Starting scenario idle
+INFO Starting scenario moderate_load
+INFO Starting scenario below_thermal
+INFO Starting scenario thermal_at
+INFO Starting scenario below_current
+INFO Starting scenario current_at
+INFO Starting scenario combined_trip

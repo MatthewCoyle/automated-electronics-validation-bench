@@ -1,0 +1,10 @@
+INFO Starting scenario transient_timeout
+WARNING transient_timeout: read timeout, retrying once
+INFO Starting scenario persistent_timeout
+WARNING persistent_timeout: read timeout, retrying once
+ERROR persistent_timeout: TimeoutError: Injected sample timeout (no time advance)
+INFO Starting scenario bad_measurement
+ERROR bad_measurement: ValueError: voltage_v must be within [-100, 100]
+INFO Starting scenario bad_state
+ERROR bad_state: ValueError: Malformed state telemetry
+INFO Starting scenario healthy_after_failures

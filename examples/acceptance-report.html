@@ -1,0 +1,1293 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Validation evidence</title><style>body{font:16px system-ui,sans-serif;color:#203047;max-width:1100px;margin:40px auto;padding:0 22px}h1,h2{color:#153d60}section{border-top:1px solid #bdcbd5;margin-top:28px}.notice{background:#fff2d6;padding:16px;border-left:5px solid #b47b16}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}td,th{border:1px solid #cad5dd;padding:9px;text-align:left}th{background:#edf3f7}.PASS{color:#176642}.FAIL,.ERROR{color:#af2424}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f5f7;padding:14px}details{margin:18px 0}footer{margin-top:30px;font-size:13px}</style><h1>Nominal regulation and protection boundaries</h1><p class='notice'><strong>SIMULATION ONLY - no physical equipment tested</strong>. Generic invented module; these values cannot qualify hardware.</p><p>{&#x27;total&#x27;: 7, &#x27;pass&#x27;: 7, &#x27;fail&#x27;: 0, &#x27;error&#x27;: 0}</p><p>Plan SHA-256: <code>419c163bb58c6bb2e226c01257563df09691df0d1edd0c19c8f68915b375a842</code></p><section><h2>idle <span class='PASS'>PASS</span></h2><p></p><p>Checks: 31; failed: 0. Samples: 5.</p><table><tr><th>Time / s</th><th>Voltage / V</th><th>Current / A</th><th>Temperature / C</th><th>Shutdown</th><th>Reason</th></tr><tr><td>0.0</td><td>4.993</td><td>0.1</td><td>25</td><td>False</td><td>none</td></tr><tr><td>0.1</td><td>4.993</td><td>0.1</td><td>25.0004</td><td>False</td><td>none</td></tr><tr><td>0.2</td><td>4.993</td><td>0.1</td><td>25.0008</td><td>False</td><td>none</td></tr><tr><td>0.3</td><td>4.993</td><td>0.1</td><td>25.00119</td><td>False</td><td>none</td></tr><tr><td>0.4</td><td>4.993</td><td>0.1</td><td>25.00158</td><td>False</td><td>none</td></tr></table><details><summary>Acceptance checks, errors and recovery evidence</summary><pre>{
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;sample_count&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 5,
+      &quot;actual&quot;: 5
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.0,
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.993
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.08,
+        0.12000000000000001
+      ],
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.1,
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.993
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.08,
+        0.12000000000000001
+      ],
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.000399001664587
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.2,
+      &quot;actual&quot;: 0.2
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.993
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.08,
+        0.12000000000000001
+      ],
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.000796013300068
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.30000000000000004,
+      &quot;actual&quot;: 0.3
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.993
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.08,
+        0.12000000000000001
+      ],
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.001191044831756
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.4,
+      &quot;actual&quot;: 0.4
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.993
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.08,
+        0.12000000000000001
+      ],
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.00158410613546
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    }
+  ],
+  &quot;events&quot;: [],
+  &quot;errors&quot;: []
+}</pre></details></section><section><h2>moderate_load <span class='PASS'>PASS</span></h2><p></p><p>Checks: 31; failed: 0. Samples: 5.</p><table><tr><th>Time / s</th><th>Voltage / V</th><th>Current / A</th><th>Temperature / C</th><th>Shutdown</th><th>Reason</th></tr><tr><td>0.0</td><td>4.93</td><td>1</td><td>25</td><td>False</td><td>none</td></tr><tr><td>0.1</td><td>4.93</td><td>1</td><td>25.0399</td><td>False</td><td>none</td></tr><tr><td>0.2</td><td>4.93</td><td>1</td><td>25.0796</td><td>False</td><td>none</td></tr><tr><td>0.3</td><td>4.93</td><td>1</td><td>25.1191</td><td>False</td><td>none</td></tr><tr><td>0.4</td><td>4.93</td><td>1</td><td>25.15841</td><td>False</td><td>none</td></tr></table><details><summary>Acceptance checks, errors and recovery evidence</summary><pre>{
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;sample_count&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 5,
+      &quot;actual&quot;: 5
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.0,
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.93
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.98,
+        1.02
+      ],
+      &quot;actual&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.1,
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.93
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.98,
+        1.02
+      ],
+      &quot;actual&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.03990016645854
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.2,
+      &quot;actual&quot;: 0.2
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.93
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.98,
+        1.02
+      ],
+      &quot;actual&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.079601330006653
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.30000000000000004,
+      &quot;actual&quot;: 0.3
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.93
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.98,
+        1.02
+      ],
+      &quot;actual&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.119104483175498
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.4,
+      &quot;actual&quot;: 0.4
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.93
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.98,
+        1.02
+      ],
+      &quot;actual&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.158410613545957
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    }
+  ],
+  &quot;events&quot;: [],
+  &quot;errors&quot;: []
+}</pre></details></section><section><h2>below_thermal <span class='PASS'>PASS</span></h2><p></p><p>Checks: 7; failed: 0. Samples: 1.</p><table><tr><th>Time / s</th><th>Voltage / V</th><th>Current / A</th><th>Temperature / C</th><th>Shutdown</th><th>Reason</th></tr><tr><td>0.0</td><td>4.916</td><td>1.2</td><td>79.99</td><td>False</td><td>none</td></tr></table><details><summary>Acceptance checks, errors and recovery evidence</summary><pre>{
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;sample_count&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 1,
+      &quot;actual&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.0,
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.916
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        1.18,
+        1.22
+      ],
+      &quot;actual&quot;: 1.2
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 79.99
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    }
+  ],
+  &quot;events&quot;: [],
+  &quot;errors&quot;: []
+}</pre></details></section><section><h2>thermal_at <span class='PASS'>PASS</span></h2><p></p><p>Checks: 31; failed: 0. Samples: 5.</p><table><tr><th>Time / s</th><th>Voltage / V</th><th>Current / A</th><th>Temperature / C</th><th>Shutdown</th><th>Reason</th></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td><td>80</td><td>True</td><td>thermal</td></tr><tr><td>0.1</td><td>0.0</td><td>0.0</td><td>79.72569</td><td>True</td><td>thermal</td></tr><tr><td>0.2</td><td>0.0</td><td>0.0</td><td>79.45274</td><td>True</td><td>thermal</td></tr><tr><td>0.3</td><td>0.0</td><td>0.0</td><td>79.18116</td><td>True</td><td>thermal</td></tr><tr><td>0.4</td><td>0.0</td><td>0.0</td><td>78.91093</td><td>True</td><td>thermal</td></tr></table><details><summary>Acceptance checks, errors and recovery evidence</summary><pre>{
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;sample_count&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 5,
+      &quot;actual&quot;: 5
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.0,
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 80
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.1,
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 79.72568635559753
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.2,
+      &quot;actual&quot;: 0.2
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 79.45274085620426
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.30000000000000004,
+      &quot;actual&quot;: 0.3
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 79.18115667816846
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.4,
+      &quot;actual&quot;: 0.4
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 78.91092703187155
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal&quot;
+    }
+  ],
+  &quot;events&quot;: [],
+  &quot;errors&quot;: []
+}</pre></details></section><section><h2>below_current <span class='PASS'>PASS</span></h2><p></p><p>Checks: 7; failed: 0. Samples: 1.</p><table><tr><th>Time / s</th><th>Voltage / V</th><th>Current / A</th><th>Temperature / C</th><th>Shutdown</th><th>Reason</th></tr><tr><td>0.0</td><td>4.86007</td><td>1.999</td><td>25</td><td>False</td><td>none</td></tr></table><details><summary>Acceptance checks, errors and recovery evidence</summary><pre>{
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;sample_count&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 1,
+      &quot;actual&quot;: 1
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.0,
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: false,
+      &quot;actual&quot;: false
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        4.75,
+        5.25
+      ],
+      &quot;actual&quot;: 4.86007
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        1.979,
+        2.019
+      ],
+      &quot;actual&quot;: 1.999
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;none&quot;
+    }
+  ],
+  &quot;events&quot;: [],
+  &quot;errors&quot;: []
+}</pre></details></section><section><h2>current_at <span class='PASS'>PASS</span></h2><p></p><p>Checks: 31; failed: 0. Samples: 5.</p><table><tr><th>Time / s</th><th>Voltage / V</th><th>Current / A</th><th>Temperature / C</th><th>Shutdown</th><th>Reason</th></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td><td>25</td><td>True</td><td>current</td></tr><tr><td>0.1</td><td>0.0</td><td>0.0</td><td>25.0</td><td>True</td><td>current</td></tr><tr><td>0.2</td><td>0.0</td><td>0.0</td><td>25.0</td><td>True</td><td>current</td></tr><tr><td>0.3</td><td>0.0</td><td>0.0</td><td>25.0</td><td>True</td><td>current</td></tr><tr><td>0.4</td><td>0.0</td><td>0.0</td><td>25.0</td><td>True</td><td>current</td></tr></table><details><summary>Acceptance checks, errors and recovery evidence</summary><pre>{
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;sample_count&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 5,
+      &quot;actual&quot;: 5
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.0,
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;current&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.1,
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;current&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.2,
+      &quot;actual&quot;: 0.2
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;current&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.30000000000000004,
+      &quot;actual&quot;: 0.3
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;current&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.4,
+      &quot;actual&quot;: 0.4
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 25.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;current&quot;
+    }
+  ],
+  &quot;events&quot;: [],
+  &quot;errors&quot;: []
+}</pre></details></section><section><h2>combined_trip <span class='PASS'>PASS</span></h2><p></p><p>Checks: 31; failed: 0. Samples: 5.</p><table><tr><th>Time / s</th><th>Voltage / V</th><th>Current / A</th><th>Temperature / C</th><th>Shutdown</th><th>Reason</th></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td><td>100</td><td>True</td><td>thermal+current</td></tr><tr><td>0.1</td><td>0.0</td><td>0.0</td><td>99.62594</td><td>True</td><td>thermal+current</td></tr><tr><td>0.2</td><td>0.0</td><td>0.0</td><td>99.25374</td><td>True</td><td>thermal+current</td></tr><tr><td>0.3</td><td>0.0</td><td>0.0</td><td>98.8834</td><td>True</td><td>thermal+current</td></tr><tr><td>0.4</td><td>0.0</td><td>0.0</td><td>98.5149</td><td>True</td><td>thermal+current</td></tr></table><details><summary>Acceptance checks, errors and recovery evidence</summary><pre>{
+  &quot;checks&quot;: [
+    {
+      &quot;name&quot;: &quot;sample_count&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 5,
+      &quot;actual&quot;: 5
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.0,
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 100
+    },
+    {
+      &quot;name&quot;: &quot;sample[0].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal+current&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.1,
+      &quot;actual&quot;: 0.1
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 99.62593593945117
+    },
+    {
+      &quot;name&quot;: &quot;sample[1].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal+current&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.2,
+      &quot;actual&quot;: 0.2
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 99.2537375311876
+    },
+    {
+      &quot;name&quot;: &quot;sample[2].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal+current&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.30000000000000004,
+      &quot;actual&quot;: 0.3
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 98.88339547022969
+    },
+    {
+      &quot;name&quot;: &quot;sample[3].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal+current&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].time&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: 0.4,
+      &quot;actual&quot;: 0.4
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].state&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: true,
+      &quot;actual&quot;: true
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].voltage_v&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        0.0,
+        0.05
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].current_a&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -0.02,
+        0.02
+      ],
+      &quot;actual&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].temperature_c&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: [
+        -40,
+        125
+      ],
+      &quot;actual&quot;: 98.51490049800664
+    },
+    {
+      &quot;name&quot;: &quot;sample[4].reason_consistency&quot;,
+      &quot;passed&quot;: true,
+      &quot;expected&quot;: &quot;trip reason iff shutdown&quot;,
+      &quot;actual&quot;: &quot;thermal+current&quot;
+    }
+  ],
+  &quot;events&quot;: [],
+  &quot;errors&quot;: []
+}</pre></details></section><footer>Software 2.0.0; Python 3.11.9; generated UTC 2026-11-11T19:58:04.788002+00:00. Full precision values and complete configuration are in report.json.</footer></html>

@@ -1,0 +1,1242 @@
+{
+  "schema_version": 1,
+  "mode": "SIMULATION ONLY - no physical equipment tested",
+  "software_version": "2.0.0",
+  "python": "3.12.14",
+  "generated_utc": "2026-11-09T20:31:46.661262+00:00",
+  "plan_sha256": "cd35f01ce8cce56e2ded184332fdd6161aaca397c70e46bd526c97c076131c7e",
+  "plan": {
+    "name": "Deliberate defect detection",
+    "scenarios": [
+      {
+        "name": "baseline",
+        "load_a": 0.5,
+        "initial_temperature_c": 25,
+        "expect_shutdown": false,
+        "ambient_c": 25,
+        "samples": 5,
+        "interval_s": 0.1,
+        "fault": "none",
+        "description": ""
+      },
+      {
+        "name": "voltage_bias",
+        "load_a": 0.5,
+        "initial_temperature_c": 25,
+        "expect_shutdown": false,
+        "ambient_c": 25,
+        "samples": 5,
+        "interval_s": 0.1,
+        "fault": "voltage_bias",
+        "description": ""
+      },
+      {
+        "name": "current_bias",
+        "load_a": 0.5,
+        "initial_temperature_c": 25,
+        "expect_shutdown": false,
+        "ambient_c": 25,
+        "samples": 5,
+        "interval_s": 0.1,
+        "fault": "current_bias",
+        "description": ""
+      },
+      {
+        "name": "protection_bypass",
+        "load_a": 0.3,
+        "initial_temperature_c": 95,
+        "expect_shutdown": true,
+        "ambient_c": 25,
+        "samples": 5,
+        "interval_s": 0.1,
+        "fault": "protection_bypass",
+        "description": ""
+      }
+    ],
+    "limits": {
+      "voltage_min_v": 4.75,
+      "voltage_max_v": 5.25,
+      "off_max_v": 0.05,
+      "current_error_a": 0.02,
+      "temperature_min_c": -40,
+      "temperature_max_c": 125
+    },
+    "schema_version": 1
+  },
+  "summary": {
+    "total": 4,
+    "pass": 1,
+    "fail": 3,
+    "error": 0
+  },
+  "results": [
+    {
+      "scenario": "baseline",
+      "stimulus": {
+        "name": "baseline",
+        "load_a": 0.5,
+        "initial_temperature_c": 25,
+        "expect_shutdown": false,
+        "ambient_c": 25,
+        "samples": 5,
+        "interval_s": 0.1,
+        "fault": "none",
+        "description": ""
+      },
+      "status": "PASS",
+      "measurements": [
+        {
+          "time_s": 0.0,
+          "voltage_v": 4.965,
+          "current_a": 0.5,
+          "temperature_c": 25,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.1,
+          "voltage_v": 4.965,
+          "current_a": 0.5,
+          "temperature_c": 25.009975041614634,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.2,
+          "voltage_v": 4.965,
+          "current_a": 0.5,
+          "temperature_c": 25.019900332501663,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.3,
+          "voltage_v": 4.965,
+          "current_a": 0.5,
+          "temperature_c": 25.029776120793873,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.4,
+          "voltage_v": 4.965,
+          "current_a": 0.5,
+          "temperature_c": 25.03960265338649,
+          "shutdown": false,
+          "reason": "none"
+        }
+      ],
+      "checks": [
+        {
+          "name": "sample_count",
+          "passed": true,
+          "expected": 5,
+          "actual": 5
+        },
+        {
+          "name": "sample[0].time",
+          "passed": true,
+          "expected": 0.0,
+          "actual": 0.0
+        },
+        {
+          "name": "sample[0].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[0].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[0].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[0].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25
+        },
+        {
+          "name": "sample[0].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[1].time",
+          "passed": true,
+          "expected": 0.1,
+          "actual": 0.1
+        },
+        {
+          "name": "sample[1].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[1].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[1].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[1].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.009975041614634
+        },
+        {
+          "name": "sample[1].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[2].time",
+          "passed": true,
+          "expected": 0.2,
+          "actual": 0.2
+        },
+        {
+          "name": "sample[2].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[2].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[2].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[2].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.019900332501663
+        },
+        {
+          "name": "sample[2].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[3].time",
+          "passed": true,
+          "expected": 0.30000000000000004,
+          "actual": 0.3
+        },
+        {
+          "name": "sample[3].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[3].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[3].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[3].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.029776120793873
+        },
+        {
+          "name": "sample[3].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[4].time",
+          "passed": true,
+          "expected": 0.4,
+          "actual": 0.4
+        },
+        {
+          "name": "sample[4].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[4].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[4].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[4].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.03960265338649
+        },
+        {
+          "name": "sample[4].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        }
+      ],
+      "events": [],
+      "errors": []
+    },
+    {
+      "scenario": "voltage_bias",
+      "stimulus": {
+        "name": "voltage_bias",
+        "load_a": 0.5,
+        "initial_temperature_c": 25,
+        "expect_shutdown": false,
+        "ambient_c": 25,
+        "samples": 5,
+        "interval_s": 0.1,
+        "fault": "voltage_bias",
+        "description": ""
+      },
+      "status": "FAIL",
+      "measurements": [
+        {
+          "time_s": 0.0,
+          "voltage_v": 5.615,
+          "current_a": 0.5,
+          "temperature_c": 25,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.1,
+          "voltage_v": 5.615,
+          "current_a": 0.5,
+          "temperature_c": 25.009975041614634,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.2,
+          "voltage_v": 5.615,
+          "current_a": 0.5,
+          "temperature_c": 25.019900332501663,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.3,
+          "voltage_v": 5.615,
+          "current_a": 0.5,
+          "temperature_c": 25.029776120793873,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.4,
+          "voltage_v": 5.615,
+          "current_a": 0.5,
+          "temperature_c": 25.03960265338649,
+          "shutdown": false,
+          "reason": "none"
+        }
+      ],
+      "checks": [
+        {
+          "name": "sample_count",
+          "passed": true,
+          "expected": 5,
+          "actual": 5
+        },
+        {
+          "name": "sample[0].time",
+          "passed": true,
+          "expected": 0.0,
+          "actual": 0.0
+        },
+        {
+          "name": "sample[0].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[0].voltage_v",
+          "passed": false,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 5.615
+        },
+        {
+          "name": "sample[0].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[0].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25
+        },
+        {
+          "name": "sample[0].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[1].time",
+          "passed": true,
+          "expected": 0.1,
+          "actual": 0.1
+        },
+        {
+          "name": "sample[1].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[1].voltage_v",
+          "passed": false,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 5.615
+        },
+        {
+          "name": "sample[1].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[1].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.009975041614634
+        },
+        {
+          "name": "sample[1].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[2].time",
+          "passed": true,
+          "expected": 0.2,
+          "actual": 0.2
+        },
+        {
+          "name": "sample[2].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[2].voltage_v",
+          "passed": false,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 5.615
+        },
+        {
+          "name": "sample[2].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[2].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.019900332501663
+        },
+        {
+          "name": "sample[2].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[3].time",
+          "passed": true,
+          "expected": 0.30000000000000004,
+          "actual": 0.3
+        },
+        {
+          "name": "sample[3].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[3].voltage_v",
+          "passed": false,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 5.615
+        },
+        {
+          "name": "sample[3].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[3].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.029776120793873
+        },
+        {
+          "name": "sample[3].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[4].time",
+          "passed": true,
+          "expected": 0.4,
+          "actual": 0.4
+        },
+        {
+          "name": "sample[4].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[4].voltage_v",
+          "passed": false,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 5.615
+        },
+        {
+          "name": "sample[4].current_a",
+          "passed": true,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.5
+        },
+        {
+          "name": "sample[4].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.03960265338649
+        },
+        {
+          "name": "sample[4].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        }
+      ],
+      "events": [],
+      "errors": []
+    },
+    {
+      "scenario": "current_bias",
+      "stimulus": {
+        "name": "current_bias",
+        "load_a": 0.5,
+        "initial_temperature_c": 25,
+        "expect_shutdown": false,
+        "ambient_c": 25,
+        "samples": 5,
+        "interval_s": 0.1,
+        "fault": "current_bias",
+        "description": ""
+      },
+      "status": "FAIL",
+      "measurements": [
+        {
+          "time_s": 0.0,
+          "voltage_v": 4.965,
+          "current_a": 0.7,
+          "temperature_c": 25,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.1,
+          "voltage_v": 4.965,
+          "current_a": 0.7,
+          "temperature_c": 25.009975041614634,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.2,
+          "voltage_v": 4.965,
+          "current_a": 0.7,
+          "temperature_c": 25.019900332501663,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.3,
+          "voltage_v": 4.965,
+          "current_a": 0.7,
+          "temperature_c": 25.029776120793873,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.4,
+          "voltage_v": 4.965,
+          "current_a": 0.7,
+          "temperature_c": 25.03960265338649,
+          "shutdown": false,
+          "reason": "none"
+        }
+      ],
+      "checks": [
+        {
+          "name": "sample_count",
+          "passed": true,
+          "expected": 5,
+          "actual": 5
+        },
+        {
+          "name": "sample[0].time",
+          "passed": true,
+          "expected": 0.0,
+          "actual": 0.0
+        },
+        {
+          "name": "sample[0].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[0].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[0].current_a",
+          "passed": false,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.7
+        },
+        {
+          "name": "sample[0].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25
+        },
+        {
+          "name": "sample[0].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[1].time",
+          "passed": true,
+          "expected": 0.1,
+          "actual": 0.1
+        },
+        {
+          "name": "sample[1].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[1].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[1].current_a",
+          "passed": false,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.7
+        },
+        {
+          "name": "sample[1].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.009975041614634
+        },
+        {
+          "name": "sample[1].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[2].time",
+          "passed": true,
+          "expected": 0.2,
+          "actual": 0.2
+        },
+        {
+          "name": "sample[2].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[2].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[2].current_a",
+          "passed": false,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.7
+        },
+        {
+          "name": "sample[2].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.019900332501663
+        },
+        {
+          "name": "sample[2].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[3].time",
+          "passed": true,
+          "expected": 0.30000000000000004,
+          "actual": 0.3
+        },
+        {
+          "name": "sample[3].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[3].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[3].current_a",
+          "passed": false,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.7
+        },
+        {
+          "name": "sample[3].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.029776120793873
+        },
+        {
+          "name": "sample[3].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[4].time",
+          "passed": true,
+          "expected": 0.4,
+          "actual": 0.4
+        },
+        {
+          "name": "sample[4].state",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        },
+        {
+          "name": "sample[4].voltage_v",
+          "passed": true,
+          "expected": [
+            4.75,
+            5.25
+          ],
+          "actual": 4.965
+        },
+        {
+          "name": "sample[4].current_a",
+          "passed": false,
+          "expected": [
+            0.48,
+            0.52
+          ],
+          "actual": 0.7
+        },
+        {
+          "name": "sample[4].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 25.03960265338649
+        },
+        {
+          "name": "sample[4].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        }
+      ],
+      "events": [],
+      "errors": []
+    },
+    {
+      "scenario": "protection_bypass",
+      "stimulus": {
+        "name": "protection_bypass",
+        "load_a": 0.3,
+        "initial_temperature_c": 95,
+        "expect_shutdown": true,
+        "ambient_c": 25,
+        "samples": 5,
+        "interval_s": 0.1,
+        "fault": "protection_bypass",
+        "description": ""
+      },
+      "status": "FAIL",
+      "measurements": [
+        {
+          "time_s": 0.0,
+          "voltage_v": 4.979,
+          "current_a": 0.3,
+          "temperature_c": 95,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.1,
+          "voltage_v": 4.979,
+          "current_a": 0.3,
+          "temperature_c": 94.65446455846903,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.2,
+          "voltage_v": 4.979,
+          "current_a": 0.3,
+          "temperature_c": 94.31065248214236,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.3,
+          "voltage_v": 4.979,
+          "current_a": 0.3,
+          "temperature_c": 93.96855517570017,
+          "shutdown": false,
+          "reason": "none"
+        },
+        {
+          "time_s": 0.4,
+          "voltage_v": 4.979,
+          "current_a": 0.3,
+          "temperature_c": 93.628164086692,
+          "shutdown": false,
+          "reason": "none"
+        }
+      ],
+      "checks": [
+        {
+          "name": "sample_count",
+          "passed": true,
+          "expected": 5,
+          "actual": 5
+        },
+        {
+          "name": "sample[0].time",
+          "passed": true,
+          "expected": 0.0,
+          "actual": 0.0
+        },
+        {
+          "name": "sample[0].state",
+          "passed": false,
+          "expected": true,
+          "actual": false
+        },
+        {
+          "name": "sample[0].voltage_v",
+          "passed": false,
+          "expected": [
+            0.0,
+            0.05
+          ],
+          "actual": 4.979
+        },
+        {
+          "name": "sample[0].current_a",
+          "passed": false,
+          "expected": [
+            -0.02,
+            0.02
+          ],
+          "actual": 0.3
+        },
+        {
+          "name": "sample[0].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 95
+        },
+        {
+          "name": "sample[0].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[1].time",
+          "passed": true,
+          "expected": 0.1,
+          "actual": 0.1
+        },
+        {
+          "name": "sample[1].state",
+          "passed": false,
+          "expected": true,
+          "actual": false
+        },
+        {
+          "name": "sample[1].voltage_v",
+          "passed": false,
+          "expected": [
+            0.0,
+            0.05
+          ],
+          "actual": 4.979
+        },
+        {
+          "name": "sample[1].current_a",
+          "passed": false,
+          "expected": [
+            -0.02,
+            0.02
+          ],
+          "actual": 0.3
+        },
+        {
+          "name": "sample[1].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 94.65446455846903
+        },
+        {
+          "name": "sample[1].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[2].time",
+          "passed": true,
+          "expected": 0.2,
+          "actual": 0.2
+        },
+        {
+          "name": "sample[2].state",
+          "passed": false,
+          "expected": true,
+          "actual": false
+        },
+        {
+          "name": "sample[2].voltage_v",
+          "passed": false,
+          "expected": [
+            0.0,
+            0.05
+          ],
+          "actual": 4.979
+        },
+        {
+          "name": "sample[2].current_a",
+          "passed": false,
+          "expected": [
+            -0.02,
+            0.02
+          ],
+          "actual": 0.3
+        },
+        {
+          "name": "sample[2].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 94.31065248214236
+        },
+        {
+          "name": "sample[2].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[3].time",
+          "passed": true,
+          "expected": 0.30000000000000004,
+          "actual": 0.3
+        },
+        {
+          "name": "sample[3].state",
+          "passed": false,
+          "expected": true,
+          "actual": false
+        },
+        {
+          "name": "sample[3].voltage_v",
+          "passed": false,
+          "expected": [
+            0.0,
+            0.05
+          ],
+          "actual": 4.979
+        },
+        {
+          "name": "sample[3].current_a",
+          "passed": false,
+          "expected": [
+            -0.02,
+            0.02
+          ],
+          "actual": 0.3
+        },
+        {
+          "name": "sample[3].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 93.96855517570017
+        },
+        {
+          "name": "sample[3].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        },
+        {
+          "name": "sample[4].time",
+          "passed": true,
+          "expected": 0.4,
+          "actual": 0.4
+        },
+        {
+          "name": "sample[4].state",
+          "passed": false,
+          "expected": true,
+          "actual": false
+        },
+        {
+          "name": "sample[4].voltage_v",
+          "passed": false,
+          "expected": [
+            0.0,
+            0.05
+          ],
+          "actual": 4.979
+        },
+        {
+          "name": "sample[4].current_a",
+          "passed": false,
+          "expected": [
+            -0.02,
+            0.02
+          ],
+          "actual": 0.3
+        },
+        {
+          "name": "sample[4].temperature_c",
+          "passed": true,
+          "expected": [
+            -40,
+            125
+          ],
+          "actual": 93.628164086692
+        },
+        {
+          "name": "sample[4].reason_consistency",
+          "passed": true,
+          "expected": "trip reason iff shutdown",
+          "actual": "none"
+        }
+      ],
+      "events": [],
+      "errors": []
+    }
+  ]
+}

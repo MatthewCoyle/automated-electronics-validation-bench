@@ -1,0 +1,40 @@
+{
+  "name": "Acquisition failure and isolated recovery",
+  "scenarios": [
+    {
+      "name": "transient_timeout",
+      "load_a": 0.5,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false,
+      "fault": "timeout_once"
+    },
+    {
+      "name": "persistent_timeout",
+      "load_a": 0.5,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false,
+      "fault": "timeout_always"
+    },
+    {
+      "name": "bad_measurement",
+      "load_a": 0.5,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false,
+      "fault": "nonfinite"
+    },
+    {
+      "name": "bad_state",
+      "load_a": 0.5,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false,
+      "fault": "unexpected_state"
+    },
+    {
+      "name": "healthy_after_failures",
+      "load_a": 0.5,
+      "initial_temperature_c": 25,
+      "expect_shutdown": false
+    }
+  ],
+  "schema_version": 1
+}
